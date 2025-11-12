@@ -11,7 +11,7 @@ const CONFIG = {
     username: 'kit_bot',
     version: '1.20.4',
     whitelist: ['ynbob', 'imkillingmyself', 'maximpactusers', 'scamection', 'SkyFalls2'],
-    spamMessage: "Pvp kit icin !kit | build kiti icin !kit grief | Discord = omerbdr_ ",
+    spamMessage: "Pvp kit icin !kit | build kiti icin !kit grief | Discord = hwi090 ",
     spamInterval: 30000,
     griefKitLocation: new Vec3(0 , 0, -0)
 };
