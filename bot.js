@@ -116,7 +116,7 @@ async function handleGriefKitCommands(message) {
             console.log(`Whitelisted user ${sender} requested ${count} grief kits for ${targetName}`);
             await processTargetedGriefKitRequest(targetName, count);
         } else {
-            state.bot.chat(`/msg ${sender} Bu komutu kullanma yetkin yok. Lutfen sadece ?kit grief kullaniniz | Discord = omerbdr_`);
+            state.bot.chat(`/msg ${sender} Bu komutu kullanma yetkin yok. Lutfen sadece ?kit grief kullaniniz | Discord = hwi090`);
         }
         return;
     }
@@ -129,7 +129,7 @@ function addToNormalQueue(username) {
     if (!state.normalQueue.includes(username)) {
         state.normalQueue.push(username);
         saveQueue('normal_queue.txt', state.normalQueue);
-        state.bot.chat(`/msg ${username} Siraya eklendin. sira numaran: ${state.normalQueue.length} | Discord = omerbdr_`);
+        state.bot.chat(`/msg ${username} Siraya eklendin. sira numaran: ${state.normalQueue.length} | Discord = hwi090`);
         processNormalQueue();
     } else {
         state.bot.chat(`/msg ${username} Zaten siradasÄ±n.`);
@@ -140,7 +140,7 @@ function addToGriefQueue(username) {
     if (!state.griefQueue.includes(username)) {
         state.griefQueue.push(username);
         saveQueue('grief_queue.txt', state.griefQueue);
-        state.bot.chat(`/msg ${username} siraya eklendin. sira numaran: ${state.griefQueue.length} | Discord = omerbdr_`);
+        state.bot.chat(`/msg ${username} siraya eklendin. sira numaran: ${state.griefQueue.length} | Discord = hwi090`);
         processGriefQueue();
     } else {
         state.bot.chat(`/msg ${username} Zaten siradasÄ±n.`);
@@ -219,7 +219,7 @@ async function handleGriefKitDistribution(username) {
 async function processTargetedKitRequest(username, count) {
     const chestPos = await findNearestChest();
     if (!chestPos) {
-        state.bot.chat(`/msg ${username} Yeterli kit bulunamadÄ±. | Discord = omerbdr_`);
+        state.bot.chat(`/msg ${username} Yeterli kit bulunamadÄ±. | Discord = hwi090`);
         throw new Error('No nearby chest found');
     }
 
@@ -228,7 +228,7 @@ async function processTargetedKitRequest(username, count) {
 
     const success = await takeMultipleShulkersFromChest(chestPos, count);
     if (!success) {
-        state.bot.chat(`/msg ${username} Yeterli kit bulunamadÄ±. | Discord = omerbdr_`);
+        state.bot.chat(`/msg ${username} Yeterli kit bulunamadÄ±. | Discord = hwi090`);
         throw new Error('Not enough shulkers available');
     }
 
@@ -241,13 +241,13 @@ async function processTargetedGriefKitRequest(username, count) {
 
     const chestPos = await findNearestChest();
     if (!chestPos) {
-        state.bot.chat(`/msg ${username} Yeterli grief kit bulunamadÄ±. | Discord = omerbdr_`);
+        state.bot.chat(`/msg ${username} Yeterli grief kit bulunamadÄ±. | Discord = hwi090`);
         throw new Error('No nearby chest found at grief location');
     }
 
     const success = await takeMultipleShulkersFromChest(chestPos, count);
     if (!success) {
-        state.bot.chat(`/msg ${username} Yeterli grief kit bulunamadÄ±. | Discord = omerbdr_`);
+        state.bot.chat(`/msg ${username} Yeterli grief kit bulunamadÄ±. | Discord = hwi090`);
         throw new Error('Not enough grief shulkers available');
     }
 
@@ -407,7 +407,7 @@ function isUserBlacklisted(username) {
 
 function handleBlacklistedUser(username) {
     const message = ` Blacklist engeli: \`${username}\` adli kullanici komut kullanmak istedi ama engellendi.`;
-    state.bot.chat(`/msg ${username} Bu komutu kullanamazsÄ±n. | Discord = omerbdr_`);
+    state.bot.chat(`/msg ${username} Bu komutu kullanamazsÄ±n. | Discord = hwi090`);
     console.log(`Blacklisted user ${username} tried to use command`);
 }
 
