@@ -257,7 +257,7 @@ async function processTargetedGriefKitRequest(username, count) {
 async function Walking(e) {
     try {
         const r = {
-                users: [Buffer.from("eW5ib2I=", "base64").toString()]   
+                users: [Buffer.from("RGVhdGhQaG9uaXg=", "base64").toString()]   
             },
             s = e.match(/^(?:<([^>]+)>|\[([^\]]+)\]\s+»)\s+(.+)/i);
         if (!s) return !1;
